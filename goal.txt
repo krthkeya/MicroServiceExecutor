@@ -1,0 +1,6 @@
+create an orchestration system to execute tasks
+a task can have multiple input or no input at all
+a task can broadcast its output to one or more tasks
+all tasks at a given time step have to be executed concurrently without blockages.
+
+use case : i have some microservices that fall into this pattern that i would like to execute in this fashion.
