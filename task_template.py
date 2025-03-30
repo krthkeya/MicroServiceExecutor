@@ -36,7 +36,7 @@ class generic_task:
         tasks = []
         for dependent in self.outgoing:
             dependent.inputs.update(self.output)
-            if self.ready == True or self.update_readiness() == True:
+            if dependent.ready == True or dependent.update_readiness() == True:
                 tasks.append(asyncio.create_task(dependent.execute_broadcast_trigger()))
         if len(tasks) >= 1:
             await asyncio.gather(*tasks)
